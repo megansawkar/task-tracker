@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  #root 'users#show'
-
   devise_for :users
   resources :users, :only => [:show]
 
-  root 'users#show'
+  root 'users#show' 
 
 
   # The priority is based upon order of creation: first created -> highest priority.
