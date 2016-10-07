@@ -15,3 +15,9 @@
     </div>
   </div>
 </div>
+
+<h2>Form</h2>
+<%= render partial: 'items/form', locals: { user: @user, item: Item.new } %>
+
+<h2>Items</h2>
+<%= render @user.items %>
