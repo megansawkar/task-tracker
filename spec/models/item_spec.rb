@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
+  let(:public) { true }
+  let(:topic) { create(:topic) }
 
   it { is_expected.to belong_to(:user) }
 
