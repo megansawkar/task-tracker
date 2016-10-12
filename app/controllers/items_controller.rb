@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
 
-    if @item.save
+    if @item.save!
       flash[:notice] = "Item was saved successfully."
       redirect_to root_path
     else

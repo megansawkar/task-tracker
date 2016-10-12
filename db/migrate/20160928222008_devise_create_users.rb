@@ -2,8 +2,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       ## User details
-      t.string :name,               null: false, default: ""
-      t.string :surname,            null: false, default: ""
+      #t.string :name,               null: false, default: ""
+      #t.string :surname,            null: false, default: ""
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
@@ -38,7 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    add_index :users, :name, :surname
+    #add_index :users, :name, :surname
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
