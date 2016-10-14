@@ -1,7 +1,8 @@
 <div class="media">
   <div class="media-body">
     <h4 class="media-heading">
-      <%= link_to item.name, items_create_path %>
+      <%= item.name %>
+      <%= link_to "", user_item_path(@user, item), method: :delete, class: 'glyphicon glyphicon-ok' %>
     </h4>
   </div>
 </div>
