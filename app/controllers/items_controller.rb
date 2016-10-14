@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
 
-  before_action :authorize_user, except: [:show]
-
   def create
     @item = Item.new(item_params)
     @item.user = current_user
@@ -39,12 +37,4 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :public)
   end
 
-  def authorize_user
-    item = Item.find(params[:id])
-
-    unless current_user == item.user
-      flash[:alert] = "You must be an admin to do that."
-      redirect_to root_path
-    end
-  end
 end

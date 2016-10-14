@@ -3,9 +3,9 @@ require 'faker'
 
 RSpec.describe Item, type: :model do
   let(:name) { Faker::Lorem.sentence }
-  let(:user) { User.create(email: Faker::Internet.email, password: Faker::Internet.password) }
+  let(:user) { create(:user) }
   let(:public) { true }
-  let(:item) { Item.create!(name: name, user: user, public: public) }
+  let(:item) { create(:item, user: user, public: public) }
 
   it { is_expected.to belong_to(:user) }
 
@@ -16,7 +16,7 @@ RSpec.describe Item, type: :model do
 
   describe "attributes" do
     it "has name and user attributes" do
-      expect(item).to have_attributes(name: name, user: user, public: public)
+      expect(item).to have_attributes(name: item.name, user: user, public: public)
     end
 
     it "is public by default" do
