@@ -77,13 +77,13 @@ context "member user doing CRUD on a post they own" do
 
   describe "DELETE destroy" do
     it "deletes the item" do
-      delete :destroy, format: :js, user_id: my_user.id, id: my_item.id
-      count = Item.where({id: my_item.id}).count
+      delete :destroy, format: :js, user_id: @user.id, id: my_item.id
+      count = Item.where({user_id: @user.id, id: my_item.id}).count
       expect(count).to eq 0
     end
 
     it "returns http success" do
-      delete :destroy, format: :js, user_id: my_user.id, id: my_item.id
+      delete :destroy, format: :js, user_id: @user.id, id: my_item.id
       expect(response).to have_http_status(:success)
     end
   end

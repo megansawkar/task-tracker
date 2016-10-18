@@ -14,8 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
-    @item.user = current_user
+    @item = current_user.items.find(params[:id])
 
     if @item.destroy
       flash[:notice] = "\"#{@item}\" was deleted successfully."
@@ -25,14 +24,14 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.js { render json: @item }
+      format.js
     end
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :public)
+    params.require(:item).permit(:name, :user_id, :public)
   end
 
 end
