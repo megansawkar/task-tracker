@@ -20,6 +20,7 @@
 <%= render partial: 'items/form', locals: { user: @user, item: Item.new } %>
 
 <h2>Items</h2>
+<h6 class="media-heading"> You have 7 days to complete your to-do items! Below each item, keep track of your remaing time. Don't forget to check completed items as done!</h6>
 <div class='js-items'>
 <%= render @user.items %>
 </div>
