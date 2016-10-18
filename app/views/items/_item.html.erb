@@ -2,7 +2,7 @@
   <div class="media-body">
     <h4 class="media-heading">
       <%= item.name %>
-      <%= link_to "", user_item_path(@user, item), method: :delete, class: 'glyphicon glyphicon-ok' %>
+      <%= link_to "", user_item_path(@user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
     </h4>
   </div>
 </div>

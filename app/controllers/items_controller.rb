@@ -19,16 +19,14 @@ class ItemsController < ApplicationController
 
     if @item.destroy
       flash[:notice] = "\"#{@item}\" was deleted successfully."
-      redirect_to root_path
     else
       flash.now[:alert] = "There was an error deleting the item."
-      redirect_to root_path
     end
 
-#    respond_to do |format|
-#      format.html
-#      format.js
-#    end
+    respond_to do |format|
+      format.html
+      format.js { render json: @item }
+    end
   end
 
   private

@@ -17,8 +17,8 @@ context "guest" do
 
   describe "DELETE destroy" do
     it "returns http redirect" do
-      delete :destroy, user_id: my_user.id, id: my_item.id
-      expect(response).to redirect_to new_user_session_path
+      delete :destroy, format: :js, user_id: my_user.id, id: my_item.id
+      expect(response).to have_http_status(401)
     end
   end
 end
@@ -47,8 +47,8 @@ context "member user doing CRUD on an item they don't own" do
 
   describe "DELETE destroy" do
     it "returns http redirect" do
-      delete :destroy, user_id: my_user.id, id: my_item.id
-      expect(response).to redirect_to root_path
+      delete :destroy, format: :js, user_id: my_user.id, id: my_item.id
+      expect(response).to have_http_status(:success)
     end
   end
 end
@@ -77,14 +77,14 @@ context "member user doing CRUD on a post they own" do
 
   describe "DELETE destroy" do
     it "deletes the item" do
-      delete :destroy, user_id: my_user.id, id: my_item.id
+      delete :destroy, format: :js, user_id: my_user.id, id: my_item.id
       count = Item.where({id: my_item.id}).count
       expect(count).to eq 0
     end
 
     it "returns http success" do
-      delete :destroy, user_id: my_user.id, id: my_item.id
-      expect(response).to have_http_status(302)
+      delete :destroy, format: :js, user_id: my_user.id, id: my_item.id
+      expect(response).to have_http_status(:success)
     end
   end
 end
