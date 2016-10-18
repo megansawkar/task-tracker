@@ -20,4 +20,6 @@
 <%= render partial: 'items/form', locals: { user: @user, item: Item.new } %>
 
 <h2>Items</h2>
+<div class='js-items'>
 <%= render @user.items %>
+</div>
