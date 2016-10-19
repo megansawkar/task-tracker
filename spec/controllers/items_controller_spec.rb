@@ -16,7 +16,7 @@ context "guest" do
   end
 
   describe "DELETE destroy" do
-    it "returns http redirect" do
+    it "returns unauthorized" do
       delete :destroy, format: :js, user_id: my_user.id, id: my_item.id
       expect(response).to have_http_status(401)
     end
@@ -46,9 +46,8 @@ context "member user doing CRUD on an item they don't own" do
   end
 
   describe "DELETE destroy" do
-    it "returns http redirect" do
-      delete :destroy, format: :js, user_id: my_user.id, id: my_item.id
-      expect(response).to have_http_status(:success)
+    it "returns error" do
+      expect { delete :destroy, format: :js, user_id: my_user.id, id: my_item.id }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end
