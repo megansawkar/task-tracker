@@ -11,6 +11,7 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'rubocop', require: false
 end
 # Use sqlite3 as the database for Active Record
 
