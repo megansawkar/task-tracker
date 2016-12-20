@@ -12,7 +12,7 @@ RSpec.describe Item, type: :model do
   it { is_expected.to validate_presence_of(:name) }
   it { is_expected.to validate_presence_of(:user) }
 
-  it{ is_expected.to validate_length_of(:name).is_at_least(3) }
+  it { is_expected.to validate_length_of(:name).is_at_least(3) }
 
   describe "attributes" do
     it "has name and user attributes" do

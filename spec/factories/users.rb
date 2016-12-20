@@ -4,6 +4,6 @@ FactoryGirl.define do
   factory :user do
     email Faker::Internet.email
     password pw
-    role :member 
+    role :member
   end
 end

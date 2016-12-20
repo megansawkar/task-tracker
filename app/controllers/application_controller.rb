@@ -3,10 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
-  def after_sign_in_path_for(resource_or_scope)
+  def after_sign_in_path_for(*)
     current_user
   end
-
 end
