@@ -31,7 +31,7 @@ RSpec.describe ItemsController, type: :controller do
 
     describe "POST create" do
       it "increases the number of Items by 1" do
-        expect { post :create, user_id: my_user.id, item: { name: name } }.to change(Item, :count).by(1)
+        expect { post :create, user_id: my_user.id, item: { name: name } }.to change(Item, :count).by(1) # rubocop:disable HttpPositionalArguments, Metrics/LineLength
       end
 
       it "assigns the new item to @item" do
@@ -60,7 +60,7 @@ RSpec.describe ItemsController, type: :controller do
 
     describe "POST #create" do
       it "increases the number of Item by 1" do
-        expect { post :create, user_id: @user.id, item: { name: name } }.to change(Item, :count).by(1)
+        expect { post :create, user_id: @user.id, item: { name: name } }.to change(Item, :count).by(1) # rubocop:disable HttpPositionalArguments, Metrics/LineLength
       end
 
       it "assigns the new item to @item" do

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   enum role: [:member]
 
   def avatar_url(size)
-    gravatar_id = Digest::MD5::hexdigest(email).downcase
+    gravatar_id = Digest::MD5::hexdigest(email).downcase # rubocop:disable ColonMethodCall
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
 end
