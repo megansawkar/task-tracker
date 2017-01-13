@@ -10,7 +10,7 @@ RSpec.describe ItemsController, type: :controller do
   context "guest" do
     describe "POST create" do
       it "returns http redirect" do
-        post :create, params: { user_id: my_user.id, item: { name: name } }
+        post :create, user_id: my_user.id, item: { name: name } # rubocop:disable HttpPositionalArguments
         expect(response).to redirect_to new_user_session_path
       end
     end
@@ -35,12 +35,12 @@ RSpec.describe ItemsController, type: :controller do
       end
 
       it "assigns the new item to @item" do
-        post :create, params: { user_id: my_user.id, item: { name: name } }
+        post :create, user_id: my_user.id, item: { name: name } # rubocop:disable HttpPositionalArguments
         expect(assigns(:item)).to eq Item.last
       end
 
       it "redirects to the new item" do
-        post :create, params: { user_id: my_user.id, item: { name: name } }
+        post :create, user_id: my_user.id, item: { name: name } # rubocop:disable HttpPositionalArguments
         expect(response).to redirect_to root_path
       end
     end
@@ -64,12 +64,12 @@ RSpec.describe ItemsController, type: :controller do
       end
 
       it "assigns the new item to @item" do
-        post :create, params: { user_id: @user.id, item: { name: name } }
+        post :create, user_id: @user.id, item: { name: name } # rubocop:disable HttpPositionalArguments
         expect(assigns(:item)).to eq Item.last
       end
 
       it "redirects to the user home page" do
-        post :create, params: { user_id: @user.id, item: { name: name } }
+        post :create, user_id: @user.id, item: { name: name } # rubocop:disable HttpPositionalArguments
         expect(response).to redirect_to root_path
       end
     end
