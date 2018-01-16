@@ -1,26 +1,25 @@
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-4 pull-right">
     <div class="media">
       <br />
       <% avatar_url = @user.avatar_url(128) %>
       <% if avatar_url %>
-        <div class="media-left">
+        <div class="media-right">
           <%= image_tag avatar_url, class: 'media-object' %>
         </div>
       <% end %>
-      <div class="media-body">
-        <h2 class="media-heading"><%= @user.email %></h2>
-        <h2 class="media-heading">Number of sign-ins: <%= @user.sign_in_count %></h2>
-      </div>
     </div>
   </div>
 </div>
 
-<h2>Form</h2>
+<div class="add-item" style="font-family: 'Josefin Sans', sans-serif;">
 <%= render partial: 'items/form', locals: { user: @user, item: Item.new } %>
+</div>
 
-<h2>Items</h2>
-<h6 class="media-heading"> You have 7 days to complete your to-do items! Below each item, keep track of your remaing time. Don't forget to check completed items as done!</h6>
+<div class="item-list" style="font-family: 'Josefin Sans', sans-serif;">
+<h3 style="font-weight:bold;">Your Tasks</h3>
+<h6 class="media-heading" style="font-style:italic;"> Remember, check completed items as done!</h6>
 <div class='js-items'>
 <%= render @user.items %>
+</div>
 </div>

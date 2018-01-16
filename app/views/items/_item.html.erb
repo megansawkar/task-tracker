@@ -1,8 +1,8 @@
 <div class="media">
   <div class="media-body">
-    <h3 class="media-heading">
+    <h3 id="item-header" class="media-heading">
+      <%= link_to "", user_item_path(@user, item), method: :delete, remote: true, id: "foo#{item.id}", class: 'glyphicon glyphicon-unchecked', onmousedown: "$('#foo#{item.id}').removeClass('glyphicon-unchecked').addClass('glyphicon-ok')" %>
       <%= item.name %>
-      <%= link_to "", user_item_path(@user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
     </h3>
     <h6 class="media-heading">
       <%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %> left!
