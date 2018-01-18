@@ -16,10 +16,17 @@
 <%= render partial: 'items/form', locals: { user: @user, item: Item.new } %>
 </div>
 
-<div class="item-list" style="font-family: 'Josefin Sans', sans-serif;">
-<h3 style="font-weight:bold;">Your Tasks</h3>
-<h6 class="media-heading" style="font-style:italic;"> Remember, check completed items as done!</h6>
-<div class='js-items'>
-<%= render @user.items %>
-</div>
+<div class="bootstrap-iso">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-md-6 col-sm-6 col-xs-12">
+     <div class="item-list" style="font-family: 'Josefin Sans', sans-serif;">
+       <h3 style="font-weight:bold;">Your Tasks</h3>
+       <h6 class="media-heading" style="color:grey">Check completed items as done!</h6>
+        <div class='js-items'>
+          <%= render @user.items %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

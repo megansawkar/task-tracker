@@ -7,9 +7,9 @@
       <div class="form-group" style="font-family: 'Josefin Sans', sans-serif;">
         <h3><%= f.label :task %></h3>
         <%= f.text_area :name, class: 'form-control', placeholder: "Enter item here" %>
-        <span class="help-block" id="hint_textarea">
+        <h6 style="color:grey"><span class="help-block" id="hint_textarea">
          Create your daily to do list. If you don't complete an item within 7 days, we'll whack it for you (it shouldn't be on your daily to do list anyway)!
-        </span>
+        </span></h6>
       </div>
       <div class="form-group">
         <%= f.submit "Add", class: 'btn btn-success' %>
