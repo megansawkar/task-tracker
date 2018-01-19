@@ -1,32 +1,8 @@
-##Blocitoff is a self destructing to-do list meant to help productivity by deleting to-do list items that are older than 7 days old.
+Task Tracker
+## A self destructing to-do list meant to help daily productivity by deleting to-do list items that are older than 7 days old.
 
-Created with my mentor at [Bloc](http://bloc.io). 
+Created with my mentor at [Bloc](http://bloc.io).
 
-== README
+## This project was created to learn how to integrate the Devise and Faker gems, as well as to learn the Rake Utility for automation in Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Built with Ruby on Rails. Ruby version 2.3.0. Rails version 4.2.5. 
